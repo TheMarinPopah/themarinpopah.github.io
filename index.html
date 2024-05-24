@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title>Erase it!!!</title> 
+    <style>
+      h1
+      {
+        position:absolute;
+          right:50%
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Erase it!!!</h1>
+	<!--This draws the canvas on the webpage -->
+    <canvas id="mycanvas"></canvas> 
+  </body>
+  <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+  <script>
+  var programCode = function(processingInstance) {
+    with (processingInstance) {
+      canvas.style = "position:absolute; left: 50%; width: 400px; margin-left: -200px;";
+      size(400, 400); 
+      frameRate(30);
+      // Paste code from Khan Academy here:
+      draw = function() {
+      noStroke();
+      fill(255, 0, 0);
+      ellipse(mouseX, mouseY, 40, 40);
+      fill(0, 0, 0);
+        textSize(50)
+        text("Erase it!!!", 100, 70);
+      };
+       background(255, 0, 0);
+            fill(0, 0, 255);
+      noStroke();
+     ellipse(200, 200, 200, 200);
+       }};
+  var canvas = document.getElementById("mycanvas"); 
+  var processingInstance = new Processing(canvas, programCode); 
+  </script>
+</html>
